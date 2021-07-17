@@ -20,7 +20,6 @@ export class LoginComponent implements OnInit {
   login() {
     this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).then(res =>{
       console.log(res.user?.uid);
-      this.DatabaseService.setUserUid(res.user?.uid);
     });
   }
   logout() {
