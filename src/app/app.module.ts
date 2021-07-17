@@ -17,6 +17,7 @@ import { TaskItemComponent } from './components/task-item/task-item.component';
 import { environment } from 'src/environments/environment';
 import { DatabaseServiceService } from './services/database-service.service';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     TaskListComponent,
     TaskItemComponent,
     DashboardComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
