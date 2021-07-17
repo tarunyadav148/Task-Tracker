@@ -8,29 +8,34 @@ import { Subject } from 'rxjs';
 export class DatabaseServiceService {
   db: AngularFireDatabase;
   private _Database =  new Subject<any[]>(); 
-  _Database$ = this._Database.asObservable(); 
+  _Database$ = this._Database.asObservable();
+  useruid:any; 
 
   constructor(db:AngularFireDatabase) {
     this.db = db;
    }
 
   addTaskToDB(newTask:any){
-    let key = this.db.database.ref('task-list').push(newTask).key;
-    this.db.database.ref('/task-list/'+key).update({id:key});
+    let key = this.db.database.ref('/'+this.useruid+'/').push(newTask).key;
+    this.db.database.ref('/'+this.useruid+'/'+key).update({id:key});
   }
 
   getTaskList(){
-    return this.db.list('/task-list').valueChanges();
+    return this.db.list('/'+this.useruid+'/').valueChanges();
   }
 
   removeFromDB(id:string){
-    this.db.database.ref('/task-list/'+id).remove().then(()=>{
+    this.db.database.ref('/'+this.useruid+'/'+id).remove().then(()=>{
       alert("Task Completed Succesfully");
     })
   }
 
   updateReminderInDB(Task:any){
-    this.db.database.ref('/task-list/'+Task.id).update(Task);
+    this.db.database.ref('/'+this.useruid+'/'+Task.id).update(Task);
+  }
+
+  setUserUid(uid:any){
+    this.useruid = uid;
   }
 
 }

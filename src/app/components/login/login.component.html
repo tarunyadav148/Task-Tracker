@@ -1,0 +1,13 @@
+<div class="center">
+<div *ngIf="auth.user | async as user; else showLogin">
+    <h1>{{ user.displayName }}</h1>
+    <button class="logout" (click)="logout()">Logout</button>
+    <app-dashboard></app-dashboard>
+  </div>
+  <ng-template #showLogin>
+      <div class="login">
+          <p>Please login.</p>
+          <img src="/assets/loginwithgoogle.png"  class="loginwithgoogle" alt="no load" (click)="login()">
+      </div>
+  </ng-template>
+</div>

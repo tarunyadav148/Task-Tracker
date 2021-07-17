@@ -1,8 +1,3 @@
-.center{
-    display: flex;
-    justify-content: center;
-}
-
 .container{
     background-color:rgb(129, 196, 196);
     /* backdrop-filter: blur(1000px); */
