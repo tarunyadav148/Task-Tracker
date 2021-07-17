@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "Task-Tracker",
+      "public": "dist/Task-Tracker",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

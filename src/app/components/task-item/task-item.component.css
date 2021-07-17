@@ -1,0 +1,19 @@
+.TaskContainer{
+    background-color: white;
+    color: rrgb(65, 62, 62);
+    margin-bottom: 2%;
+    font-size: large;
+    border-radius: 10px ;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.TaskContainer div{
+    display:block;
+}
+
+.TaskContainer:hover{
+    cursor: pointer;
+}

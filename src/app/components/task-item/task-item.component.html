@@ -1,0 +1,7 @@
+<div class="TaskContainer" (dblclick)="setReminder()">
+    <div [ngStyle]="{'border-left': Task.reminder ?'solid 3px grey':'white'}">
+        <h4>{{Task.task}}</h4>
+        <h4>{{Task.date}}</h4>
+    </div>
+    <fa-icon [icon]="faCheckCircle" (click)="removeTask(Task.id)"></fa-icon>
+</div>

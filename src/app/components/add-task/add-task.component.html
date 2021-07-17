@@ -1,0 +1,6 @@
+<form *ngIf="showFlag" #TaskForm="ngForm" (ngSubmit)="onSubmit(TaskForm)" autocomplete="off">
+    <input type="text" name="task" placeholder="Mention the task" required ngModel>
+    <input type="date" name="date" placeholder="Date" required ngModel>
+    <br />
+    <button>Add Task</button>
+</form>

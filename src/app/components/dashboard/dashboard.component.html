@@ -1,0 +1,12 @@
+<div class="center">
+<div class="container">
+    <div>
+        <app-header></app-header>
+        <fa-icon [icon]="addrmBtn" size="2x" (click)="AddRemoveTask()"></fa-icon>
+        <app-add-task  [showFlag] ="showflag" ></app-add-task>
+        <div class="taskview">
+            <app-task-list></app-task-list>
+        </div>
+    </div>
+</div>
+</div>
