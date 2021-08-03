@@ -4,24 +4,30 @@
 }
 
 .login{
+    margin-top: 5vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 100vh;
+    height: 90vh;
+    width: 65vh;
+    background-image:linear-gradient(rgb(197, 207, 154),rgb(200, 216, 56));
+    border-radius: 20px;
 }
 
 .login p{
     font-size:5vh;
     font-weight: bold;
+    color: rgb(75, 72, 72);
+    margin-bottom: 5vh;
 }
 
-.loginwithgoogle{
-    width: 50vh;
-    border: solid 5px #ccc;
+.loginwith{
+    width: 60vh;
     border-radius: 20px;
     cursor: pointer;
+    margin-bottom: 2vh;
 }
 
 .logout{
@@ -36,8 +42,14 @@
 }
 
 @media(max-width:700px) {
-    .loginwithgoogle{
-        width: 40vh;
+    .loginwith{
+        margin-top: 2vh;
+        width: 45vh;
+        border-radius: 20px;
+    }
+    .login{
+        height: 90vh;
+        width: 50vh;
         border: solid 5px #ccc;
         border-radius: 20px;
         cursor: pointer;

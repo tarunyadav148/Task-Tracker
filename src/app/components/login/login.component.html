@@ -7,7 +7,9 @@
   <ng-template #showLogin>
       <div class="login">
           <p>Please login.</p>
-          <img [src]="loginimgsrc"  class="loginwithgoogle" alt="Login with Google" (click)="login()">
+          <img [src]="loginwithgoogle"  class="loginwith" alt="Login with Google" (click)="loginWithGoogle()">
+          <img [src]="loginwithfb"  class="loginwith" alt="Login with Facebook" (click)="loginWithFB()">
+          <img [src]="loginwithtwitter"  class="loginwith" alt="Login with Twitter" (click)="loginWithTwitter()">
       </div>
   </ng-template>
 </div>
