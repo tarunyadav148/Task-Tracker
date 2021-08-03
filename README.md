@@ -1,7 +1,10 @@
 # TaskTracker
 
 <a href="https://tarunyadav148.github.io/Task-Tracker/">Task-Tracker(Deployed App)</a>
-<img src="./screenshot/login.png">
+<img src="./screenshot/login.png" alt="login component">
+<img src="./screenshot/dashboard0.png" alt="dashboard pic0">
+<img src="./screenshot/dashboard1.png" alt="dashboard pic1">
+<img src="./screenshot/dashboard2.png" alt="dashboard pic2">
 
 ## Development server
 
