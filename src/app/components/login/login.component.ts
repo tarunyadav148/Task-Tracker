@@ -14,8 +14,7 @@ export class LoginComponent implements OnInit {
 
   loginwithfb: string = 'https://firebasestorage.googleapis.com/v0/b/task-traker-4f454.appspot.com/o/loginwithfb.png?alt=media&token=09672335-238a-40da-8f80-416aec7ab6ad';
 
-  loginwithtwitter: string = 'https://firebasestorage.googleapis.com/v0/b/task-traker-4f454.appspot.com/o/loginwithtwitter.png?alt=media&token=d194a63e-4ee1-47b2-b5fe-17cef435f432';
-
+  loginwithgithub: string = 'https://firebasestorage.googleapis.com/v0/b/task-traker-4f454.appspot.com/o/loginwithgithub.jpg?alt=media&token=b77902c0-b39c-4e99-ae14-c535290ae990';
   constructor(public auth: AngularFireAuth,private DatabaseService:DatabaseServiceService) {}
 
   ngOnInit(): void {
@@ -27,18 +26,24 @@ export class LoginComponent implements OnInit {
   loginWithGoogle() {
     this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).then(res =>{
       this.DatabaseService.setUserUid(res.user?.uid);
+    }).catch((error)=>{
+      alert(error.message);
     });
   }
 
   loginWithFB(){
     this.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider()).then(res=>{
       this.DatabaseService.setUserUid(res.user?.uid);
+    }).catch((error)=>{
+      alert(error.message);
     });
   }
 
-  loginWithTwitter() {
-    this.auth.signInWithPopup(new firebase.auth.TwitterAuthProvider()).then(res =>{
+  loginWithGitHub() {
+    this.auth.signInWithPopup(new firebase.auth.GithubAuthProvider()).then(res =>{
       this.DatabaseService.setUserUid(res.user?.uid);
+    }).catch((error)=>{
+      alert(error.message);
     });
   }
 
