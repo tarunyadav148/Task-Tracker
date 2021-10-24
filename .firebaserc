@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "task-traker-4f454": {
+      "hosting": {
+        "Task-Tracker": [
+          "task-traker-4f454"
+        ]
+      }
+    }
+  }
+}

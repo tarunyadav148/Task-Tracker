@@ -11,6 +11,11 @@
     text-align: center;
     color: rgb(65, 62, 62);
     box-shadow: 15px 15px 5px #ccc;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
 }
 
 .container div{

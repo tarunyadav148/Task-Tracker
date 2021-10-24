@@ -30,7 +30,17 @@ export class AddTaskComponent implements OnInit {
     }
 
     let taskForm = TaskForm.value;
-    let date = new Date(taskForm['date']).toString().slice(0,16);
+
+    let taskDate = new Date(taskForm['date']);
+    let q = new Date();
+    let currDate = new Date(q.getFullYear(),q.getMonth(),q.getDate());
+    if(taskDate<currDate){
+      alert("Date cannot be in the past");
+      return;
+    }
+
+    
+    let date = taskDate.toString().slice(0,16);
     const newTask = {
       task: taskForm['task'],
       date: date,

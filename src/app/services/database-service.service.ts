@@ -16,26 +16,27 @@ export class DatabaseServiceService {
    }
 
   addTaskToDB(newTask:any){
-    let key = this.db.database.ref('/'+this.useruid+'/').push(newTask).key;
-    this.db.database.ref('/'+this.useruid+'/'+key).update({id:key});
+    let key = this.db.database.ref('/users/'+this.useruid+'/').push(newTask).key;
+    this.db.database.ref('/users/'+this.useruid+'/'+key).update({id:key});
   }
 
   getTaskList(){
-    return this.db.list('/'+this.useruid+'/').valueChanges();
+    return this.db.list('/users/'+this.useruid+'/').valueChanges();
   }
 
   removeFromDB(id:string){
-    this.db.database.ref('/'+this.useruid+'/'+id).remove().then(()=>{
-      alert("Task Completed Succesfully");
+    this.db.database.ref('/users/'+this.useruid+'/'+id).remove().then(()=>{
+      // alert("Task Completed Succesfully");
     })
   }
 
   updateReminderInDB(Task:any){
-    this.db.database.ref('/'+this.useruid+'/'+Task.id).update(Task);
+    this.db.database.ref('/users/'+this.useruid+'/'+Task.id).update(Task);
   }
 
   setUserUid(uid:any){
     this.useruid = uid;
+    this.db.database.ref('/users/'+this.useruid).child('uid');
   }
 
 }

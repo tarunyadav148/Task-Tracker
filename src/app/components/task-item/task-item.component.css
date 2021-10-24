@@ -1,6 +1,6 @@
 .TaskContainer{
     background-color: white;
-    color: rrgb(65, 62, 62);
+    color: rgb(65, 62, 62);
     margin-bottom: 2%;
     font-size: large;
     border-radius: 10px ;
@@ -8,12 +8,22 @@
     display: flex;
     justify-content: space-between;
     text-align: left;
+    
 }
 
 .TaskContainer div{
     display:block;
+    word-break: break-all;
 }
 
 .TaskContainer:hover{
     cursor: pointer;
+}
+
+.TaskDone{
+    text-decoration: line-through 2px;
+}
+
+.Reminder{
+    border-left: solid 3px grey;
 }

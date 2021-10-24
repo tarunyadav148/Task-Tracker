@@ -1,5 +1,5 @@
 import { Component, OnInit ,Input} from '@angular/core';
-import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle,faTimes} from '@fortawesome/free-solid-svg-icons';
 import { DatabaseServiceService } from 'src/app/services/database-service.service';
 
 @Component({
@@ -10,11 +10,20 @@ import { DatabaseServiceService } from 'src/app/services/database-service.servic
 export class TaskItemComponent implements OnInit {
 
   @Input() Task:any;
-  faCheckCircle = faCheckCircle;
+  icon = faCheckCircle;
+  status = false;
 
   constructor(private _DatabaseService:DatabaseServiceService) { }
 
   ngOnInit(): void {
+  }
+
+  setStatus(id:string){
+    this.status = !this.status;
+    if(this.status)
+      this.icon = faTimes;
+    else
+    this.removeTask(id);
   }
 
   removeTask(id:string){
@@ -25,6 +34,5 @@ export class TaskItemComponent implements OnInit {
     this.Task.reminder = !(this.Task.reminder)
     this._DatabaseService.updateReminderInDB(this.Task);
   }
-
 
 }
