@@ -27,3 +27,7 @@
 .Reminder{
     border-left: solid 3px grey;
 }
+
+.Date{
+    color: rgb(17, 94, 97);
+}

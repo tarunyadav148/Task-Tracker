@@ -1,6 +1,5 @@
 .container{
     background-color:rgb(129, 196, 196);
-    /* backdrop-filter: blur(1000px); */
     border: solid 5px transparent;
     margin-top: 1vh;
     height: 98vh;
