@@ -31,6 +31,7 @@ export class AddTaskComponent implements OnInit {
 
     let taskForm = TaskForm.value;
 
+    //Validating the date
     let taskDate = new Date(taskForm['date']);
     let q = new Date();
     let currDate = new Date(q.getFullYear(),q.getMonth(),q.getDate());
@@ -44,7 +45,8 @@ export class AddTaskComponent implements OnInit {
     const newTask = {
       task: taskForm['task'],
       date: date,
-      reminder: false
+      reminder: false,
+      status: false
     }
     this.DatabaseService.addTaskToDB(newTask);
     TaskForm.reset();

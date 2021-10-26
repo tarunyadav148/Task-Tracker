@@ -1,7 +1,7 @@
 <div class="TaskContainer" (dblclick)="setReminder()">
-    <div [class.Reminder]="Task.reminder"[class.TaskDone]="status">
+    <div [class.Reminder]="Task.reminder"[class.TaskDone]="Task.status">
         <h4>{{Task.task}}</h4>
         <h4>{{Task.date}}</h4>
     </div>
-    <fa-icon [icon]="icon" (click)="setStatus(Task.id)"></fa-icon>
+    <fa-icon [icon]="Task.status?faTimes:faCheckCircle" (click)="setStatus(Task.id)"></fa-icon>
 </div>

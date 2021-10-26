@@ -10,8 +10,8 @@ import { DatabaseServiceService } from 'src/app/services/database-service.servic
 export class TaskItemComponent implements OnInit {
 
   @Input() Task:any;
-  icon = faCheckCircle;
-  status = false;
+  faTimes = faTimes;
+  faCheckCircle = faCheckCircle;
 
   constructor(private _DatabaseService:DatabaseServiceService) { }
 
@@ -19,11 +19,12 @@ export class TaskItemComponent implements OnInit {
   }
 
   setStatus(id:string){
-    this.status = !this.status;
-    if(this.status)
-      this.icon = faTimes;
+    if(this.Task.status == false){
+      this.Task.status = true;
+      this._DatabaseService.updateTaskInDB(this.Task);
+    }
     else
-    this.removeTask(id);
+      this.removeTask(id);
   }
 
   removeTask(id:string){
@@ -32,7 +33,7 @@ export class TaskItemComponent implements OnInit {
 
   setReminder(){
     this.Task.reminder = !(this.Task.reminder)
-    this._DatabaseService.updateReminderInDB(this.Task);
+    this._DatabaseService.updateTaskInDB(this.Task);
   }
 
 }

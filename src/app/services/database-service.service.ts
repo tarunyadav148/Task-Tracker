@@ -30,7 +30,7 @@ export class DatabaseServiceService {
     })
   }
 
-  updateReminderInDB(Task:any){
+  updateTaskInDB(Task:any){
     this.db.database.ref('/users/'+this.useruid+'/'+Task.id).update(Task);
   }
 
